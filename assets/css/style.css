@@ -1,0 +1,313 @@
+
+/* ^^^^^^^^^^^^GENERAL STUFF^^^^^^^^^^^^^^^^^ */
+@font-face {
+    font-family: 'bpgnino';
+    src: url('../fonts/bpg_nino_mtavruli_normal-webfont.eot');
+    src: url('../fonts/bpg_nino_mtavruli_normal-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/bpg_nino_mtavruli_normal-webfont.woff') format('woff'),
+    url('../fonts/bpg_nino_mtavruli_normal-webfont.ttf') format('truetype'),
+    url('../fonts/bpg_nino_mtavruli_normal-webfont.svg#bpg_nino_mtavruliregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+  font-family: 'bpgnino', arial, sans-serif;
+  color: #444444;
+  font-size: 16px;
+  background-color: #7ea1bc;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+h1,
+h2,
+h5,
+h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #000;
+  display: block;
+  font-size: 2em;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+h3 {
+  font-family: 'bpgnino';
+  font-size: 1.1em;
+  font-weight: 300;
+}
+h4 {
+  font-family: 'bpgnino';
+  color: #444444;
+  font-size: 1em;
+  font-weight: 300;
+}
+ul {
+  display: inline;
+  float: left;
+  padding: 0;
+  list-style: none;
+}
+li{
+  margin: 15px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+a:hover {
+  text-decoration: underline;
+  color: #0e98c5;
+}
+/*::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}*/
+
+/* ......GENERAL STYFF........*/
+
+.header {
+  background: #0080ff;
+}
+.container {
+  padding: 0;
+  margin: auto;
+}
+.container-fluid {
+  height: 20px;
+  padding: 0 50px 0 20px;
+}
+.space {
+  margin-left: 0.5%;
+  margin-Right: 0.5%;
+  width: 24%;
+}
+.snglrow {
+  z-index: 1;
+  height: 35px;
+  margin-bottom: -7px;
+}
+#info-box {
+  margin-top: 0px;
+  border-radius: 5px 250px 0 200px;
+  height: 80px;
+  padding: 15px;
+}
+#info-box h3:nth-child(2){
+  padding-left: 25px;
+}
+.dbrow {
+  height: 60px;
+  padding-top: 12px;
+}
+.wide{
+  top: -20px;
+  left: 150px;
+  width: 334%;
+  height: 20px;
+  z-index: -1;
+  border-radius: 0 5px 5px 15px;
+  position: relative;
+  -moz-box-shadow: 1px -2px 4px rgba(0, 0, 0,0.5);
+  -webkit-box-shadow: 1px -2px 4px rgba(0, 0, 0, .5);
+  box-shadow: 1px -2px 4px rgba(0, 0, 0, .5);
+  background: white;
+}
+#z {
+  z-index: 1;
+}
+.green-leaf {
+  background-color: #59b200 !important;
+  border-top: 2px solid #4c9900;
+  border-left: 2px soild #4c9900;
+}
+.logo {
+    width: 200px;
+    padding: 0px;
+    margin: 0px;
+    float: left;
+    color: #fff;
+    font-size: 20px;
+}
+.nav {
+  float: right;
+}
+.nav li{
+  float: right;
+  display: inline;
+}
+footer {
+  color: #fff;
+  background-color: #323232;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: 50px auto 0 auto;
+}
+
+
+/* ^^^^^^promo^^^^^^^^ */
+
+.promo {
+  color: #fff;
+  padding-top: 150px;
+  padding-bottom: 100px;
+  margin: auto;
+  background-image: url(../img/untitled-1.gif);
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.promo .title {
+  font-size: 98px;
+  color: #074f66;
+  margin-top: 0;
+}
+.promo .title .highlight {
+  color: #eebf3f;
+}
+.intro {
+  margin-top: -50px;
+}
+
+/*.......promo.......*/
+
+/*^^^^^^^^^^^Checker^^^^^^^^^^^*/
+.appcontainer {
+  width: 50%;
+  margin-top: 5px;
+}
+.case {
+  background-color: rgba(255,255,255, 0.8);
+}
+.case-title {
+  color: #fff;
+  margin-top: 25px;
+  height: 45px;
+  padding-top: 12px;
+  border-radius: 5px;
+  background-color: #327ac1;
+}
+.content-case {
+  margin-top: 17px;
+  padding: 5px 0 5px 0;
+  min-height: 150px;
+  max-height: 500px;
+  overflow: auto;
+  border: 1px solid #989898;
+  border-style: inset;
+}
+.symptom-button {
+  background-color: #D3D3D3;
+  height: 35px;
+  margin: 0px 5px 5px 5px;
+  padding-top: 7px;
+  padding-right: 35px;
+  background-image: url(../img/icons/plus.gif);
+  background-position: right top;
+  background-repeat: no-repeat;
+  /*background-attachment: fixed;*/
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  cursor: pointer;
+}
+.symptom-button-minus {
+  background-color: #D3D3D3;
+  height: 35px;
+  margin: 0px 5px 5px 5px;
+  padding-top: 7px;
+  padding-right: 35px;
+  background-image: url(../img/icons/minus.gif);
+  background-position: right top;
+  background-repeat: no-repeat;
+  /*background-attachment: fixed;*/
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  cursor: pointer;
+}
+#body {
+  width: 100%;
+  height: 500px;
+  margin-top: -13px;
+  background-image: url(../img/body-fe-front.gif);
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-attachment: fixed;
+-webkit-background-size: contain;
+-moz-background-size: contain;
+-o-background-size: contain;
+background-size: contain;
+}
+
+
+/*^^^^^^^^^^^Media^^^^^^^^^*/
+
+@media (max-width: 575px) {
+  .appcontainer,
+  .promo,
+  footer {
+    width: 100%;
+  }
+  /*.col-xs-6,
+  .col-xs-3 {
+    display: table-row;
+  }*/
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .appcontainer,
+  .promo,
+  footer {
+    width: 80%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .appcontainer,
+  .promo,
+  footer {
+    width: 70%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .appcontainer,
+  .promo,
+  footer {
+    width: 60%;
+  }
+ }
+
+@media (min-width: 1200px) {
+  .appcontainer,
+  .promo,
+  footer {
+    width: 50%;
+  }
+}

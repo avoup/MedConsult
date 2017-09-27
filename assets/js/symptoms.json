@@ -1,0 +1,92 @@
+[
+  {
+  "id": 1,
+  "name": "pain",
+  "loc": "hand"
+},
+{
+"id": 2,
+"name": "bleeding",
+"loc": "hand"
+},
+{
+"id": 3,
+"name": "organ missing",
+"loc": "hand"
+},
+{
+"id": 4,
+"name": "pain",
+"loc": "hand"
+},
+{
+"id": 5,
+"name": "bleeding",
+"loc": "hand"
+},
+{
+"id": 6 ,
+"name": "organ missing",
+"loc": "hand"
+},
+{
+"id": 1,
+"name": "pain",
+"loc": "hand"
+},
+{
+"id": 2,
+"name": "bleeding",
+"loc": "hand"
+},
+{
+"id": 3,
+"name": "organ missing",
+"loc": "hand"
+},
+{
+"id": 4,
+"name": "pain",
+"loc": "hand"
+},
+{
+"id": 5,
+"name": "bleeding",
+"loc": "hand"
+},
+{
+"id": 6 ,
+"name": "organ missing",
+"loc": "hand"
+},
+{
+"id": 1,
+"name": "pain",
+"loc": "hand"
+},
+{
+"id": 2,
+"name": "bleeding",
+"loc": "hand"
+},
+{
+"id": 3,
+"name": "organ missing",
+"loc": "hand"
+},
+{
+"id": 4,
+"name": "pain",
+"loc": "hand"
+},
+{
+"id": 5,
+"name": "bleeding",
+"loc": "hand"
+},
+{
+"id": 6 ,
+"name": "organ missing",
+"loc": "hand"
+}
+]
