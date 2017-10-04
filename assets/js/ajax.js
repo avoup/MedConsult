@@ -1,4 +1,19 @@
 $(document).ready(function(){
+
+  // ^^^^^^^^^^^TOOLTIP
+
+  var tooltipss = document.querySelectorAll('.tooltips span');
+
+  window.onmousemove = function (e) {
+      var x = (e.clientX + 20) + 'px',
+          y = (e.clientY + 20) + 'px';
+      for (var i = 0; i < tooltipss.length; i++) {
+          tooltipss[i].style.top = y;
+          tooltipss[i].style.left = x;
+      }
+  };
+
+  // ^^^^^^^^^GET JSON
       $.getJSON("assets/js/symptoms.json", function(result){
 
           var html = "";
@@ -16,32 +31,18 @@ $(document).ready(function(){
           $("#symptoms").html(html);
 
 
-  function clik(){
-          $("#symptoms > .symptom-button").click(function(){
+      $('.symptom-button').click(function(){
+          var inThis = this;
+          var containersIds = ['symptoms','chosen-symptoms'];
+          var sourse = $(this).parent().prop("id");
+          var index = containersIds.indexOf(sourse)+1;
+              index %= 2;
+              var destination = containersIds[index];
+              $(inThis).slideUp(200, function(){
+                $(inThis).appendTo('#'+destination).slideDown(100);
 
-            $("#chosen-symptoms").append(this);
-            $("#chosen-symptoms > .symptom-button")
-            .removeClass("symptom-button")
-            .addClass("symptom-button-minus");
-
-
-            $("#chosen-symptoms > .symptom-button-minus").click(function(){
-
-              $("#symptoms").prepend(this);
-              $("#symptoms > .symptom-button-minus")
-              .removeClass("symptom-button-minus")
-              .addClass("symptom-button");
-
-                clik();
-            });
-
+              });
           });
-
-        }
-
-clik();
-
-
     });
 
 
