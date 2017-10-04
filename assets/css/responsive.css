@@ -1,44 +1,35 @@
-
+/*
 @media (max-width: 575px) {
   .appcontainer,
-  .promo,
-  footer {
+  .promo {
     width: 100%;
   }
-  /*.col-xs-6,
-  .col-xs-3 {
-    display: table-row;
-  }*/
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
   .appcontainer,
-  .promo,
-  footer {
+  .promo {
     width: 80%;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
   .appcontainer,
-  .promo,
-  footer {
+  .promo {
     width: 70%;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
   .appcontainer,
-  .promo,
-  footer {
+  .promo {
     width: 60%;
   }
  }
 
 @media (min-width: 1200px) {
   .appcontainer,
-  .promo,
-  footer {
+  .promo {
     width: 50%;
   }
-}
+}*/

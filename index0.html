@@ -46,27 +46,32 @@
 <div class="container-fluid">
   <div class="row appcontainer">
     <div class="col-sm-8">
-      <div class="col-sm-12 case-title text-center"><h3>აირჩიეთ სიმპტომები</h3></div>
+      <div class="col-sm-12 case-title text-center"><h3>აირჩიეთ ასაკი და სქესი</h3></div>
       <div class="col-sm-12 text-center display">
-        <div class="col-sm-7 wide content-case" id="body">
-          <object data="assets/img/fe-front-svg.svg" type="image/svg+xml" id="svg-path">
+          <!-- <object data="assets/img/fe-front-svg.svg" type="image/svg+xml" id="svg-path">
             თქვენს ბრაუზერს არ აქვს SVG ფუნქცია!
-          </object>
+          </object> -->
+          <form class="form">
 
-        </div>
-        <div class="col-sm-5 wide content-case" id="symptoms">  symptoms go here    </div>
+            <select name="age">
+              <option value="0-2">(შემოწმება ბავშვისთვის) 0-2 წლის</option>
+              <option value="3-6">(შემოწმება ბავშვისთვის) 3-6 წლის</option>
+              <option value="7-12">(შემოწმება ბავშვისთვის) 7-12 წლის</option>
+              <option value="13-17">13-17 წლის</option>
+              <option value="18-24">18-24 წლის</option>
+              <option value="25-34">25-34 წლის</option>
+              <option value="35-44">35-44 წლის</option>
+              <option value="45-54">45-54 წლის</option>
+              <option value="55-64">55-64 წლის</option>
+              <option value="65">65-ზე მეტი</option>
+            </select><br>
+
+            <input type="radio" name="gender" value="male" checked> Male
+            <input type="radio" name="gender" value="female"> Female<br>
+            <input type="submit" value="Submit">
+          </form>
+
       </div>
-    </div>
-
-    <div class="col-sm-3 wide">
-      <!-- <div class="col-sm-12 notwide bord content-case"> -->
-        <div class="case-title text-center"><h3>არჩეული სიმპტომები</h3></div>
-        <div class="col-sm-12 notwide content-case" id="chosen-symptoms"></div>
-      <!-- </div> -->
-      <!-- <div class="col-sm-12 notwide bord content-case"> -->
-        <div class="case-title text-center"><h3>სავარაუდო დიაგნოზი</h3></div>
-        <div class="col-sm-12 notwide content-case" id="diagnosis"></div>
-      <!-- </div> -->
     </div>
   </div>
 
