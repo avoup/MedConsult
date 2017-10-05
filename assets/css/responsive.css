@@ -1,11 +1,10 @@
-/*
+
 @media (max-width: 575px) {
-  .appcontainer,
-  .promo {
-    width: 100%;
+  .form {
+    top: 0;
   }
 }
-*/
+
 @media (min-width: 576px) {
     .col-sm-3,
     .col-sm-8 {

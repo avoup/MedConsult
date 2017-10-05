@@ -132,7 +132,7 @@ nav li a:hover:not(.active) {
 }
 .form {
   position: relative;
-  top: 250px;
+  top: 150px;
   margin: auto;
   /*background-color: #fff;*/
 }
