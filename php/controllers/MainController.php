@@ -28,6 +28,13 @@ class MainController {
                     }
                     $response = $model->getSubBodyParts($id, $position);
                     break;
+                case 'symptoms':
+                    if($id < 0) {
+                        $this->error['error'] .= ' ID not passed';
+                        return $this->error;
+                    }
+                    $response = $model->getSymptoms($id);
+                    break;
             }
             
             return $response;

@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 include_once('./database/mysql.php');
 include_once('./database/connect.php');
 
-if(!isset($_REQUEST['a'])) {
+/**/if(!isset($_REQUEST['a'])) {
     echo json_encode(array('success' => false, 'error' => 'fatal error! code: 0'));
     die;
 }
