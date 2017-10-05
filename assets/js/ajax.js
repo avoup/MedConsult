@@ -1,5 +1,14 @@
 $(document).ready(function(){
 
+  $("#close").click(function openNav() {
+    if(document.getElementById("mySidenav").style.width == "50px"){
+      document.getElementById("mySidenav").style.width = "100%";
+    }
+    else {
+      document.getElementById("mySidenav").style.width = "50px";
+    }
+  });
+
   // ^^^^^^^^^^^TOOLTIP
 
   var tooltipss = document.querySelectorAll('.tooltips span');

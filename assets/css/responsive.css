@@ -5,31 +5,32 @@
     width: 100%;
   }
 }
-
-@media (min-width: 576px) and (max-width: 767px) {
-  .appcontainer,
-  .promo {
-    width: 80%;
+*/
+@media (min-width: 576px) {
+    .col-sm-3,
+    .col-sm-8 {
+    max-width: 100%;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .appcontainer,
-  .promo {
-    width: 70%;
+  .inline {
+    display: inline-block;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-  .appcontainer,
-  .promo {
-    width: 60%;
+.inline {
+  display: inline-flex;
   }
+.col-sm-3 {
+  max-width: 50%;
+}
  }
 
-@media (min-width: 1200px) {
-  .appcontainer,
-  .promo {
-    width: 50%;
+@media (max-width: 1200px) {
+  .row {
+    display: block;
   }
-}*/
+
+}
