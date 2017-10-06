@@ -88,6 +88,6 @@ $(document).ready(function(){
      $("#fe-fig").hide();
      $("#ma-fig").show();
    }
-   document.getElementById("mySidenav").style.width = "50px";
+   document.getElementById("mySidenav").style.width = "0";
 });
 });

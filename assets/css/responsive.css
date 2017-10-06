@@ -1,30 +1,80 @@
 
-@media (max-width: 575px) {
+@media (max-width: 575px)  {
   .form {
     top: 0;
   }
+  #body {
+    max-width: 100%;
+  }
+  #symptoms {
+    display:none;
+  }
+  .notwide {
+    margin-bottom: 0;
+  }
+  nav ul {
+    width: 0;
+  }
+  .appcontainer {
+    margin-left: 0;
+  }
 }
 
-@media (min-width: 576px) {
+@media (min-width: 576px) and (max-width: 767px){
     .col-sm-3,
     .col-sm-8 {
     max-width: 100%;
+  }
+  .notwide {
+    margin-bottom: 0;
+  }
+  nav ul {
+    width: 0;
+  }
+  .appcontainer {
+    margin-left: 0;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
   .inline {
-    display: inline-block;
+    display: inline-flex;
+  }
+  /*#body {
+    max-width: 100%;
+  }*/
+  .col-sm-3 {
+    max-width: 50%;
+  }
+  .col-sm-8 {
+  max-width: 100%;
+  }
+  .inline.wide {
+    height: 300px;
+    max-width: 50%;
+  }
+  .notwide {
+    height: 100%;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-.inline {
-  display: inline-flex;
+  .inline {
+    display: inline-flex;
+    }
+  .col-sm-3 {
+    max-width: 50%;
   }
-.col-sm-3 {
-  max-width: 50%;
-}
+  .col-sm-8 {
+  max-width: 100%;
+  }
+  .inline.wide {
+    height: 300px;
+    max-width: 50%;
+  }
+  .notwide {
+    height: 100%;
+  }
  }
 
 @media (max-width: 1200px) {
