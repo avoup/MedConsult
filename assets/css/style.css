@@ -51,28 +51,25 @@ h4 {
 a {
   color: #fff;
   text-decoration: none;
+  padding: 0;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -ms-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
 }
-a:hover {
-  text-decoration: underline;
-  color: #0e98c5;
-}
+
 /*^^^^^^^Nav*/
 
 .sidenav {
     height: 100%;
     width: 100%;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     left: 0;
     background-color: #111;
     overflow: hidden;
     transition: 0.5s;
-    padding-top: 60px;
     text-align:center;
 }
 
@@ -86,20 +83,15 @@ a:hover {
     display: block;
     transition: 0.3s;
 }
-.sidenav a:hover{
-    color: #f1f1f1;
-}
 .sidenav .closebtn {
     position: absolute;
     top: 5px;
     right: 18px;
     font-size: 36px;
     margin-left: 50px;
+    z-index: 2;
 }
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
+
 
 nav ul {
     list-style-type: none;
@@ -109,16 +101,15 @@ nav ul {
     width: 50px;
     background-color: #000;
     position: fixed;
-    overflow: auto;
+    /*overflow: hidden;*/
     z-index: 1;
 }
 nav li {
-  height: 100px;
+  height: 75px;
 }
 nav li a {
     display: block;
     color: #fff;
-    padding: 35%;
 }
 
 nav li a.active {
@@ -126,10 +117,104 @@ nav li a.active {
     color: white;
 }
 
-nav li a:hover:not(.active) {
-    background-color: #555;
-    color: white;
+nav li a:hover:not(.active) > i {
+  color: #0080ff;
 }
+nav li a:hover ~ .nav-item-text {
+  width: 350px;
+}
+.nav-item i {
+  font-size: 30px;
+  padding: 10px;
+  color: #fff;
+  transition: 0.3s;
+}
+.nav-item-text {
+  position:absolute;
+  display: block;
+  border-radius: 8px;
+  background-color: #000;
+  color: #fff;
+  height: 40px;
+  width: 0px;
+  font-size: 25px;
+  font-weight: 800;
+  overflow: hidden;
+  left: 55px;
+  margin-top: -40px;
+  padding-top: 5px;
+  text-shadow: 1px 1px 1px #0080ff;
+  -webkit-transition: width 0.3s ease-in-out;
+  -moz-transition: width 0.3s ease-in-out;
+  -o-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+}
+.draw {
+  background: none;
+  border: 0;
+  margin: 1em;
+  padding: 1em 2em;
+  box-shadow: inset 0 0 0 2px #fff;
+  color: #fff;
+  font-size: inherit;
+  font-weight: 700;
+  position: relative;
+  vertical-align: middle;
+  transition: color 0.25s;
+}
+.draw::before, .draw::after {
+  box-sizing: inherit;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  width: 0;
+  height: 0;
+}
+.draw::before {
+  top: 0;
+  left: 0;
+}
+.draw::after {
+  bottom: 0;
+  right: 0;
+}
+.draw:hover {
+  color: #60daaa;
+}
+.draw:hover::before, .draw:hover::after {
+  width: 100%;
+  height: 100%;
+}
+.draw:hover::before {
+  border-top-color: #0080ff;
+  border-right-color: #0080ff;
+  transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+}
+.draw:hover::after {
+  border-bottom-color: #0080ff;
+  border-left-color: #0080ff;
+  transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+}
+
+.meet:hover {
+  color: #0080ff;
+}
+.meet::after {
+  top: 0;
+  left: 0;
+}
+.meet:hover::before {
+  border-top-color: #0080ff;
+  border-right-color: #0080ff;
+}
+.meet:hover::after {
+  border-bottom-color: #0080ff;
+  border-left-color: #0080ff;
+  transition: height 0.25s ease-out, width 0.25s ease-out 0.25s;
+}
+/*000000000*/
 .form {
   position: relative;
   top: 150px;
@@ -141,7 +226,6 @@ nav li a:hover:not(.active) {
   height:60px;
 }
 input[type="radio"] {
-	/*opacity: 0;*/
 	width: 25px;
   height: 25px;
   margin-right: 5px;
@@ -149,6 +233,7 @@ input[type="radio"] {
 .radio-inline {
   margin: 15px;
 }
+
 
 /* ......GENERAL STYFF........*/
 

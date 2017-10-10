@@ -1,10 +1,9 @@
 $(document).ready(function(){
   $("#ma-fig").hide();
-  $("#fe-fig").hide();
+  // $("#fe-fig").hide();
 
-  function build(f) {
 
-    	var a = document.getElementById(f);
+    	var a = document.getElementById("fe-fig");
 
     	var svgDoc = a.contentDocument;
 
@@ -77,16 +76,17 @@ $(document).ready(function(){
     //                     "top": top, "left": left});
     //
     // });
-  }
+
 
   $('#subbtn').click(function() {
    if($('input[name=gender]:checked', 'form').val() == "female"){
      $("#ma-fig").hide();
      $("#fe-fig").show();
-     build("fe-fig");
+    //  build("fe-fig");
    } else {
      $("#fe-fig").hide();
      $("#ma-fig").show();
+    //  build("ma-fig");
    }
    document.getElementById("mySidenav").style.width = "0";
 });

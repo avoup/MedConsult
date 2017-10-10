@@ -1,13 +1,12 @@
 $(document).ready(function(){
 
-  $("#close").click(function openNav() {
-    if(document.getElementById("mySidenav").style.width == "0"){
-      document.getElementById("mySidenav").style.width = "100%";
-    }
-    else {
-      document.getElementById("mySidenav").style.width = "0";
-    }
+  $("#close").click(function() {
+    document.getElementById("mySidenav").style.width = "0";
   });
+  $("#open").click(function(){
+    document.getElementById("mySidenav").style.width = "100%";
+  });
+
 
   // ^^^^^^^^^^^TOOLTIP
 

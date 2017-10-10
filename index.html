@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="icon.ico">
     <!-- <link href='assets/css/fonts/font.css' rel='stylesheet' type='text/css'> -->
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css"> -->
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
     <!-- myCSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- <link rel="stylesheet" href="assets/css/shapes.css"> -->
@@ -33,15 +33,21 @@
 </header> -->
 <header>
   <nav>
+    <ul>
+      <li class="nav-item"><a class="active" href="#main"><i class="fa fa-heartbeat" aria-hidden="true"></i></a></li>
+      <li class="nav-item"><a href="#" id="open"><i class="fa fa-repeat" aria-hidden="true"></i></a>
+        <span class="nav-item-text text-center">ახლიდან დაწყება</span>
+      </li>
+      <li class="nav-item"><a href="#allsymptoms"><i class="fa fa-book" aria-hidden="true"></i></a>
+        <span class="nav-item-text text-center">ყველა სიმპტომის ნახვა</span>
+      </li>
+      <li class="nav-item"><a href="#contact"><i class="fa fa-phone-square" aria-hidden="true"></i></a>
+        <span class="nav-item-text text-center">კონტაქტი</span>
+      </li>
+  </ul>
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" id="close">&times;</a>
-      <ul>
-        <li><a href="#logo">L</a></li>
-        <li><a class="active" href="#home">H</a></li>
-        <li><a href="#news">N</a></li>
-        <li><a href="#contact">C</a></li>
-        <li><a href="#about">A</a></li>
-      </ul>
+
 
       <form class="form">
 
@@ -69,14 +75,23 @@
             </label>
       </div>
       <div>
-        <button type="button" value="Submit" id="subbtn">დაწყება</button>
+        <button type="button" value="Submit" class="draw meet" id="subbtn">დაწყება</button>
       </div>
 
       </form>
 
     </div>
+    <!-- <div class="nav-items">
+      <ul>
+
+      </ul>
+    </div> -->
   </nav>
+
+
 </header>
+
+
 
 <div class="container-fluid">
   <div class="row appcontainer">
@@ -119,7 +134,7 @@
 <script type="text/javascript" src="assets/plugins/jquery-3.2.1.min.js"></script>
 
 <!-- <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> -->
-<script type="text/javascript" src="assets/js/ajax.js"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
 <script type="text/javascript" src="assets/js/shapes.js"></script>
 
   </body>
