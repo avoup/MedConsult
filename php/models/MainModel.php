@@ -8,10 +8,10 @@ class MainModel {
 		$this->sql = new sql();
 	}
         
-        function getBodyParts($position) {
+        function getBodyParts($position, $skin=-1) {
             $db = $this->sql;
             
-            $query = "select * from t_body_parts b where b.position in (0,:position)";
+            $query = "select * from t_body_parts b where b.position in (0,:position) and id != ".$skin;
             $params = array(0 => array('name' => ':position', 'value' => $position, 'type' => PDO::PARAM_INT|PDO::PARAM_INPUT_OUTPUT, 'size' => -1));
             
             return $db->execStatement($query, $params);      
@@ -28,6 +28,22 @@ class MainModel {
                     1 => array('name' => ':position', 'value' => $position, 'type' => PDO::PARAM_INT|PDO::PARAM_INPUT_OUTPUT, 'size' => -1));
             
             return $db->execStatement($query, $params);      
+        }        
+        
+        function getStructure() {
+            $body_parts = array('front' => array(),
+                        'back' => array(),
+                        'skin' => array('ID' => 11, 'name' => 'კანი', 'position' => 0, 'sub_parts' => array())
+                );   
+            $body_parts['front'] = $this->getBodyParts(1,11);
+            $body_parts['back'] = $this->getBodyParts(2,11);
+            
+            for($i=0; $i<sizeof($body_parts['front']); $i++)
+                $body_parts['front'][$i]['sub_parts'] = $this->getSubBodyParts ($body_parts['front'][$i]['ID'], 1);
+            for($i=0; $i<sizeof($body_parts['back']); $i++)
+                $body_parts['back'][$i]['sub_parts'] = $this->getSubBodyParts ($body_parts['back'][$i]['ID'], 2);
+            
+            return $body_parts;
         }
         
         function getSymptoms($id) {

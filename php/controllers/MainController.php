@@ -10,7 +10,7 @@ class MainController {
 	}
 
 	function getList() {
-            $params = isset($_REQUEST['params']) ? $_REQUEST['params'] : 'main_parts';
+            $params = isset($_REQUEST['params']) ? $_REQUEST['params'] : '';
             $position = isset($_REQUEST['position']) ? $_REQUEST['position'] : 1;
             $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : -1;
             
@@ -35,6 +35,8 @@ class MainController {
                     }
                     $response = $model->getSymptoms($id);
                     break;
+                default:
+                    $response = $model->getStructure();
             }
             
             return $response;
