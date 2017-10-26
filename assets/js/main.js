@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+//side menu
   $("#close").click(function() {
     document.getElementById("mySidenav").style.width = "0";
   });
@@ -7,21 +8,20 @@ $(document).ready(function(){
     document.getElementById("mySidenav").style.width = "100%";
   });
 
+  // TOOLTIP
 
-  // ^^^^^^^^^^^TOOLTIP
+  // var tooltipss = document.querySelectorAll('.tooltips span');
+  //
+  // window.onmousemove = function (e) {
+  //     var x = (e.clientX + 20) + 'px',
+  //         y = (e.clientY + 20) + 'px';
+  //     for (var i = 0; i < tooltipss.length; i++) {
+  //         tooltipss[i].style.top = y;
+  //         tooltipss[i].style.left = x;
+  //     }
+  // };
 
-  var tooltipss = document.querySelectorAll('.tooltips span');
-
-  window.onmousemove = function (e) {
-      var x = (e.clientX + 20) + 'px',
-          y = (e.clientY + 20) + 'px';
-      for (var i = 0; i < tooltipss.length; i++) {
-          tooltipss[i].style.top = y;
-          tooltipss[i].style.left = x;
-      }
-  };
-
-  // ^^^^^^^^^GET JSON
+  // GET JSON
       $.getJSON("assets/js/symptoms.json", function(result){
 
           var html = "";

@@ -1,93 +1,62 @@
 $(document).ready(function(){
-  $("#ma-fig").hide();
-  // $("#fe-fig").hide();
+  //Hide figures
+  $(".female").hide();
+  $(".male").hide();
+
+  var num = 0;
+  var sex = '';
+  var view = '';
+
+    	// var a = document.getElementById("fe-fig");
+      //
+    	// var svgDoc = a.contentDocument;
+      //
+    	// var svgItem = svgDoc.querySelectorAll("#head-2, #neck, #chest-2, #hands-2, #abdomen-2, #pelvis-2, #legs-2, #hand_line, #chest_boob, #chest_boob-2, #head_ear_right, #head_ear_right-2, #abdomen_navel, #pelvis_line, #pelvis_line-2");
+      //
+      // var transformer = svgDoc.getElementById("transformer");
+      //
+      // $(transformer).attr("transform", "translate(10,10),scale(4,4)");
 
 
-    	var a = document.getElementById("fe-fig");
-
-    	var svgDoc = a.contentDocument;
-
-    	var svgItem = svgDoc.querySelectorAll("#head-2, #neck, #chest-2, #hands-2, #abdomen-2, #pelvis-2, #legs-2, #hand_line, #chest_boob, #chest_boob-2, #head_ear_right, #head_ear_right-2, #abdomen_navel, #pelvis_line, #pelvis_line-2");
-
-      var transformer = svgDoc.getElementById("transformer");
-
-      $(transformer).attr("transform", "translate(10,10),scale(4,4)");
-
-    // $(svgItem).click(function(e){
-    //
-    //   var width = "200%";
-    //   var height = "";
-    //   var top = "-" + $("#body").height()/2 + "px";
-    //   var left = "-" + $("#body").width()/2 + "px";
-    //   var bot = "";
-    //
-    //   if(e.target.id == "head-2"){
-    //     // width = "200%";
-    //     // height = "200%"
-    //     top = "";
-    //     // left = "";
-    //     // alert("head");
-    // }
-    //   else if(e.target.id == "neck"){
-    //     // width = "";
-    //     // height = "";
-    //     top = "-100px";
-    //     // left = "-235px";
-    //     // alert("neck");
-    // }
-    //   else if(e.target.id == "chest-2"){
-    //     // width = "";
-    //     // height = "";
-    //     top = "-40%";
-    //     // left = "-235px";
-    //     // alert("chest");
-    // }
-    //   else if(e.target.id == "hands-2"){
-    //     width = "110%";
-    //     // height = "120%";
-    //     top = "-" + $("#body").height()/3 + "px";
-    //     left = $("#body").width()/4 + "px";
-    //     // alert("hand");
-    // }
-    //   else if(e.target.id == "abdomen-2"){
-    //     // width = "";
-    //     // height = "";
-    //     top = "-700px";
-    //     // left = "-235px";
-    //     // alert("abdomen");
-    // }
-    //   else if(e.target.id == "pelvis-2"){
-    //     // width = "";
-    //     // height = "";
-    //     top = "-900px";
-    //     // left = "-235px";
-    //     // alert("pelvis");
-    // }
-    //   else if(e.target.id == "legs-2"){
-    //     width = "200%";
-    //     // height = "1200px";
-    //     // top = "-" + $("#body").height() + "px";
-    //     // bot = $("#body").height() + "px";
-    //     // left = "";
-    //     // alert("leg");
-    // }
-    //
-    // $("#svg-path").css({"width": width, "height": height,
-    //                     "top": top, "left": left});
-    //
-    // });
-
-
+      //sex choice submit
+      //show chosen hide other;
   $('#subbtn').click(function() {
+    view = "front";
    if($('input[name=gender]:checked', 'form').val() == "female"){
-     $("#ma-fig").hide();
-     $("#fe-fig").show();
+     sex = "female";
+     $(".male").hide();
+     $("#female-front").show();
     //  build("fe-fig");
-   } else {
-     $("#fe-fig").hide();
-     $("#ma-fig").show();
+  } else if($('input[name=gender]:checked', 'form').val() == "male") {
+    sex = "male";
+     $(".female").hide();
+     $("#male-front").show();
     //  build("ma-fig");
    }
+   $(".svg-path").css("background-image", "url(assets/img/" + sex + "-front-low.jpg)")
    document.getElementById("mySidenav").style.width = "0";
 });
+
+//rotate figure
+// -----------------------------------------------------es rotates aketebs da ver movifiqre sxvanairad rogor shemecvala
+//-------------------------------------------------------"lijbi imushaos" kodia es da uketess tu moifiqreb kai iqneba :D
+$("#rotate").click(function(){
+  num++
+
+  if(view == "front"){
+    $("#" + sex + "-front").hide();
+    $("#" + sex + "-back").show();
+    $(".svg-path").css("background-image", "url(assets/img/" + sex + "-back-low.jpg)")
+    view = "back";
+  }
+  else{
+    $("#" + sex + "-back").hide();
+    $("#" + sex + "-front").show();
+    $(".svg-path").css("background-image", "url(assets/img/" + sex + "-front-low.jpg)")
+    view = "front";
+
+  }
+
+});
+
 });

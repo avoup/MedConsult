@@ -16,7 +16,7 @@
     width: 0;
   }
   .appcontainer {
-    margin-left: 0;
+    padding-left: 0;
   }
   .form {
     top: 0;
@@ -27,6 +27,7 @@
   .radio-inline {
     margin: 0;
   }
+
 }
 
 @media (min-width: 576px) and (max-width: 767px){
@@ -41,7 +42,7 @@
     width: 0;
   }
   .appcontainer {
-    margin-left: 0;
+    padding-left: 0;
   }
   .form {
     top: 0;
@@ -52,15 +53,13 @@
   .radio-inline {
     margin: 0;
   }
+
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
   .inline {
     display: inline-flex;
   }
-  /*#body {
-    max-width: 100%;
-  }*/
   .col-sm-3 {
     max-width: 50%;
   }
@@ -74,6 +73,7 @@
   .notwide {
     height: 100%;
   }
+
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -84,7 +84,7 @@
     max-width: 50%;
   }
   .col-sm-8 {
-  max-width: 100%;
+    max-width: 100%;
   }
   .inline.wide {
     height: 300px;
@@ -93,11 +93,16 @@
   .notwide {
     height: 100%;
   }
+
  }
 
 @media (max-width: 1200px) {
   .row {
     display: block;
   }
-
+}
+@media (min-width: 1200px) {
+  .contact {
+    max-width: 92%;
+  }
 }
