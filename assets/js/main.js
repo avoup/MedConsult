@@ -8,6 +8,7 @@ $(document).ready(function(){
     document.getElementById("mySidenav").style.width = "100%";
   });
 
+
   // TOOLTIP
 
   // var tooltipss = document.querySelectorAll('.tooltips span');

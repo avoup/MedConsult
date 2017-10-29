@@ -146,6 +146,7 @@ nav li a:hover ~ .nav-item-text {
   font-size: 25px;
   font-weight: 800;
   overflow: hidden;
+  white-space: nowrap;
   left: 55px;
   margin-top: -50px;
   padding-top: 8px;
@@ -343,9 +344,11 @@ input[type="radio"] {
 #body {
   overflow: hidden;
   max-width: calc(7/12 * 100%);
+  background-color: #1f1f1f;
 }
 .svg-path {
   position: relative;
+  overflow: hidden;
   background-color: #1f1f1f;
   background-image: url(../img/female-front-low.jpg);
   background-repeat: no-repeat;
