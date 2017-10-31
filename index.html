@@ -16,67 +16,110 @@
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
     <!-- myCSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- <link rel="stylesheet" href="assets/css/shapes.css"> -->
+    <link rel="stylesheet" href="assets/css/menu.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
 
 </head>
 <body>
 
+
+
+
 <header>
+
   <nav>
+    <!-- button menu -->
+    <section class="menu menu--circle">
+      <input type="checkbox" id="menu__active"/>
+      <label for="menu__active" class="menu__active">
+        <div class="menu__toggle">
+          <div class="icon">
+            <div class="hamburger"></div>
+          </div>
+        </div>
+        <div class="menu__listings">
+          <ul class="circle">
+            <li>
+              <div class="placeholder">
+                <div class="upside">
+                  <a href="#" class="button"><i class="fa fa-envelope"></i></a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="placeholder">
+                <div class="upside">
+                  <a href="#" class="button open"><i class="fa fa-repeat"></i></a>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="placeholder">
+                <div class="upside">
+                  <a href="#" class="button"><i class="fa fa-phone-square"></i></a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </label>
+  </section>
+
+  <section class="menu_normal">
     <ul>
       <li class="nav-item"><a class="active" href="#main"><i class="fa fa-heartbeat" aria-hidden="true"></i></a></li>
-      <li class="nav-item"><a href="#" id="open"><i class="fa fa-repeat" aria-hidden="true"></i></a>
+      <li class="nav-item"><a href="#" class="open"><i class="fa fa-repeat" aria-hidden="true"></i></a>
         <span class="nav-item-text text-center">ახლიდან დაწყება</span>
       </li>
-      <li class="nav-item"><a href="#allsymptoms"><i class="fa fa-book" aria-hidden="true"></i></a>
+      <li class="nav-item"><a href="#allsymptoms"><i class="fa fa-envelope" aria-hidden="true"></i></a>
         <span class="nav-item-text text-center">ყველა სიმპტომის ნახვა</span>
       </li>
       <li class="nav-item"><a href="#contact"><i class="fa fa-phone-square" aria-hidden="true"></i></a>
         <span class="nav-item-text text-center">კონტაქტი</span>
       </li>
   </ul>
+</section>
+
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" id="close">&times;</a>
 
 
       <form class="form">
 
-      <div class="container">
-         <label for="choose-age">აირჩიეთ ასაკი:</label>
-        <select class="form-control" id="choose-age" name="age">
-          <option value="0-2">(შემოწმება ბავშვისთვის) 0-2 წლის</option>
-          <option value="3-6">(შემოწმება ბავშვისთვის) 3-6 წლის</option>
-          <option value="7-12">(შემოწმება ბავშვისთვის) 7-12 წლის</option>
-          <option value="13-17">13-17 წლის</option>
-          <option value="18-24">18-24 წლის</option>
-          <option value="25-34">25-34 წლის</option>
-          <option value="35-44">35-44 წლის</option>
-          <option value="45-54">45-54 წლის</option>
-          <option value="55-64">55-64 წლის</option>
-          <option value="65">65-ზე მეტი</option>
-        </select><br>
-      </div>
-      <div>
-        <label class="radio-inline">
-              <input type="radio" name="gender" value="male">მამრობითი
-            </label>
-            <label class="radio-inline">
-              <input type="radio" name="gender" value="female">მდედრობითი
-            </label>
-      </div>
-      <div>
-        <button type="button" value="Submit" class="draw meet" id="subbtn">დაწყება</button>
-      </div>
+        <div class="container">
+          <label for="choose-age">აირჩიეთ ასაკი:</label>
+          <select class="form-control" id="choose-age" name="age">
+            <option value="0-2">(შემოწმება ბავშვისთვის) 0-2 წლის</option>
+            <option value="3-6">(შემოწმება ბავშვისთვის) 3-6 წლის</option>
+            <option value="7-12">(შემოწმება ბავშვისთვის) 7-12 წლის</option>
+            <option value="13-17">13-17 წლის</option>
+            <option value="18-24">18-24 წლის</option>
+            <option value="25-34">25-34 წლის</option>
+            <option value="35-44">35-44 წლის</option>
+            <option value="45-54">45-54 წლის</option>
+            <option value="55-64">55-64 წლის</option>
+            <option value="65">65-ზე მეტი</option>
+          </select><br>
+        </div>
+
+        <div>
+          <label class="radio-inline">
+            <input type="radio" name="gender" value="male" checked>მამრობითი
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="gender" value="female">მდედრობითი
+          </label>
+        </div>
+
+        <div>
+          <button type="button" value="Submit" class="draw meet" id="subbtn">დაწყება</button>
+        </div>
 
       </form>
-
     </div>
-    <!-- <div class="nav-items">
-      <ul>
-
-      </ul>
-    </div> -->
   </nav>
 
 
@@ -95,6 +138,7 @@
             თქვენს ბრაუზერს არ აქვს SVG ფუნქცია!
           </object>
           <div class="svg-btn" id="rotate"></div>
+          <div class="svg-btn" id="zoom-out"></div>
           <div class="svg-btn" id="skin"></div>
         </div>
         <div class="col-sm-5 wide content-case" id="symptoms"> symptoms go here </div>

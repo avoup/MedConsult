@@ -4,7 +4,7 @@ $(document).ready(function(){
   $("#close").click(function() {
     document.getElementById("mySidenav").style.width = "0";
   });
-  $("#open").click(function(){
+  $(".open").click(function(){
     document.getElementById("mySidenav").style.width = "100%";
   });
 
