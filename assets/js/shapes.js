@@ -18,7 +18,7 @@ $(document).ready(function(){
       sex = "male";
       pos = "0";
       posit();
-    } 
+    }
      $(".svg-path").css("background-image", "url(assets/img/" + sex + "-front.jpg)")
      $("#close").css("display","block");
      document.getElementById("menu__active").checked = false;
@@ -32,10 +32,14 @@ $(document).ready(function(){
 
 
 
+          var showThis, hideThis;
           $(svg).click(function(e){
 
             var scale = 4;
             $("#zoom-out").show(500);
+
+            $(showThis).css("display","none");
+            $(hideThis).css("display","block");
 
             switch(e.target.dataset.name){
               case "head":
@@ -55,7 +59,7 @@ $(document).ready(function(){
                 position = [0,100];
                 break;
               case "pelvis":
-              case "butt":
+              case "buttock":
                 position = [0,10];
                 scale = 3.7;
                 break;
@@ -73,12 +77,19 @@ $(document).ready(function(){
                 $("#zoom-out").hide();
             }
 
+            showThis = svgDoc.getElementById(sex[0] + "-" + view[0] + "-i-" + e.target.dataset.name);
+            hideThis = svgDoc.getElementById(sex[0] + "-" + view[0] + "-" + e.target.dataset.name);
+            $(showThis).css("display","block");
+            $(hideThis).css("display","none");
+
             $(".svg-path").css("transform", "scale(" + scale + ") translate(" + position[0] + "px," + position[1] + "px)")
           });
 
           $("#zoom-out").click(function(){
             position = [0,0];
             scale = 1;
+            $(showThis).css("display","none");
+            $(hideThis).css("display","block");
             $(this).hide(500);
             $(".svg-path").css("transform", "scale(" + scale + ") translate(" + position[0] + "px," + position[1] + "px)")
 

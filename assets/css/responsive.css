@@ -127,6 +127,9 @@
   .menu_normal {
     display: none;
   }
+  /*.sidenav {
+    white-space: wrap;
+  }*/
 }
 @media (min-width: 768px){
   .menu {

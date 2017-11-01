@@ -70,7 +70,7 @@ a {
     width: 100%;
     position: fixed;
     z-index: 2;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
     top: 0;
     left: 0;
     background-color: #111;
