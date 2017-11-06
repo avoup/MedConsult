@@ -65,7 +65,7 @@
   </g>
 </g>
 
-<g id="inner">
+<!-- <g id="inner">
   <g class="male">
     <g class="male_front">
       <g id="m-f-i-head">
@@ -220,12 +220,33 @@
       </g>
     </g>
   </g>
-</g>
+</g> -->
 
-<text class="tooltip" id="tooltip" x="0" y="0">e</text>
+  <text class="tooltip" id="tooltip" x="0" y="0">e</text>
 
   <script type="text/ecmascript">
   <![CDATA[
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var resp = JSON.parse(this.responseText);
+      myFunction(resp.parts);
+      }
+    };
+    xhttp.open("GET", "../../php/loader.php?params=main_parts", true);
+    xhttp.send();
+
+    function myFunction(arr) {
+      var out = "";
+      var i;
+      for(i = 0; i < arr.length; i++) {
+          out += "<path " + arr[i].image + " />";
+      }
+      document.getElementById("outer").innerHTML = out;
+      console.log(out);
+    }
+
     function init(evt){
 
       if ( window.svgDocument == null ){
