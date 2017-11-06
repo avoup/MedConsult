@@ -20,12 +20,20 @@ class MainController {
             
             switch($params) {
                 case 'main_parts':
-                    $response = array('front' => array(),
-                        'back' => array(),
-                        'parts' => array(),
-                        'skin' => array('ID' => 11, 'name' => 'კანი', 'position' => 0, 'sub_parts' => array())
+                    $response = array(
+                        'male' => array('front' => array(),
+                            'back' => array(),
+                            'skin' => array('ID' => 11, 'name' => 'კანი', 'position' => 0, 'sub_parts' => array())
+                        ),
+                        'female' => array('front' => array(),
+                            'back' => array(),
+                            'skin' => array('ID' => 27, 'name' => 'კანი', 'position' => 0, 'sub_parts' => array())
+                        )
                     );  
-                    $response['parts'] = $model->getBodyParts($position, $gender, 11);
+                    $response['male']['front'] = $model->getBodyParts(1, 1, 11);
+                    $response['male']['back'] = $model->getBodyParts(2, 1, 11);
+                    $response['female']['front'] = $model->getBodyParts(1, 2, 27);
+                    $response['female']['back'] = $model->getBodyParts(2, 2, 27);
                     break;
                 case 'sub_parts':
                     if($id < 0) {
