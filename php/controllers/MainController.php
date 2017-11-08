@@ -35,12 +35,26 @@ class MainController {
                     $response['female']['front'] = $model->getBodyParts(1, 2, 27);
                     $response['female']['back'] = $model->getBodyParts(2, 2, 27);
                     break;
-                case 'sub_parts':
+                case 'sub_parts_by_id':
                     if($id < 0) {
                         $this->error['error'] .= ' ID not passed';
                         return $this->error;
                     }
-                    $response = $model->getSubBodyParts($id, $position, $gender, 11);
+                    $response = $model->getSubBodyPartsById($id, $position, $gender, 11);
+                    break;
+                case 'sub_parts':
+                    $response = array(
+                        'male' => array('front' => array(),
+                            'back' => array()
+                        ),
+                        'female' => array('front' => array(),
+                            'back' => array()
+                        )
+                    );
+                    $response['male']['front'] = $model->getSubBodyParts(1, 1);
+                    $response['male']['back'] = $model->getSubBodyParts(2, 1);
+                    $response['female']['front'] = $model->getSubBodyParts(1, 2);
+                    $response['female']['back'] = $model->getSubBodyParts(2, 2);
                     break;
                 case 'symptoms':
                     //TO-DO: add functionality to get symptoms by age and gender (t_symptom_map.age_id,gender)
@@ -54,7 +68,7 @@ class MainController {
                     $response = $model->getAgeList();
                     break;
                 default:
-                    $response = $model->getStructure($gender);
+                    $response = $model->getStructure();
             }
             
             return $response;
