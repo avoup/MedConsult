@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
 //side menu
   $("#close").click(function() {
     document.getElementById("mySidenav").style.width = "0";

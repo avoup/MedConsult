@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
   var sex,view,pos,svg,position;
   var a = document.getElementById("figure");
 
@@ -81,7 +80,7 @@ $(document).ready(function(){
             position = [0,190];
             break;
           case "back":
-            position = [0,140]
+            position = [0,140];
             scale = 3.5;
             break;
           case "abdomen":
