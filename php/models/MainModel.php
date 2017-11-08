@@ -29,7 +29,7 @@ class MainModel {
         function getSubBodyPartsById($id, $position, $gender) { 
             $db = $this->sql;
             
-            $query = "SELECT s.id, s.name, s.image, s.parent_id FROM t_body_map m, t_sub_body_parts s
+            $query = "SELECT s.id, s.name, s.image, s.html_id, s.parent_id FROM t_body_map m, t_sub_body_parts s
                         where m.sub_body_parts_id = s.id
                           and m.body_parts_id = :id
                           and s.position = :position
