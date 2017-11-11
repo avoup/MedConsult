@@ -30,36 +30,6 @@ $(document).ready(function(){
       var svgi = svgDoc.getElementById("outer");
       var showThis, hideThis;
 
-        // $.ajax ({
-        //   url: 'php/loader.php?params=main_parts',
-        //   type: "post",
-        //   // data: $('#username').serialize(),
-        //   // datatype: "JSON",
-        //   beforeSend: function(){
-        //     console.log("loading");
-        //   },
-        //   success: function(response){
-        //
-        //     var resp = $.parseJSON(response);
-        //     $.each(resp.parts, function(i,v){
-        //
-        //       console.log(v);
-        //       $(svgi).append("<path " + v.image + " />")
-        //
-        //
-        //     })
-        //     // $("#errorplace").html(answer.response);
-        //
-        //   },
-        //   error: function(error){
-        //
-        //     var resp = $.parseJSON(error);
-        //
-        //     console.log(resp.response);
-        //   }
-        // })
-
-
       $(svg).click(function(e){
 
         var scale = 4;
