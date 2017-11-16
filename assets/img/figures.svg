@@ -15,7 +15,7 @@
         fill: #fff;
       }
       #f-f-i-head,#f-f-i-neck,#f-f-i-chest,#f-f-i-abdomen,#f-f-i-pelvis,#f-f-i-leg,#f-f-i-hand,
-      #m-f-i-head,#f-f-i-neck,#m-f-i-chest,#m-f-i-abdomen,#m-f-i-pelvis,#m-f-i-leg,#m-f-i-hand,
+      #m-f-i-head,#m-f-i-neck,#m-f-i-chest,#m-f-i-abdomen,#m-f-i-pelvis,#m-f-i-leg,#m-f-i-hand,
       #f-b-i-head,#f-b-i-neck,#f-b-i-back,#f-b-i-buttock,#f-b-i-leg,#f-b-i-hand,
       #m-b-i-head,#m-b-i-neck,#m-b-i-back,#m-b-i-buttock,#m-b-i-leg,#m-b-i-hand
       {

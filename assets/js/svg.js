@@ -53,7 +53,7 @@
         }
       }
     }
-    console.log(out);
+    // console.log(out);
     document.getElementById("outer").innerHTML = out;
   }
 
@@ -68,7 +68,7 @@
 
   function ShowTooltip(evt, mouseovertext, x){
 
-  tooltip.setAttributeNS(null,"x",evt.clientX + x + 20);
+  tooltip.setAttributeNS(null,"x",evt.clientX + x + 10);
   tooltip.setAttributeNS(null,"y",evt.clientY);
   tooltip.firstChild.data = mouseovertext;
   tooltip.setAttributeNS(null,"visibility","visible");

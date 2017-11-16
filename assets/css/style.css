@@ -4,7 +4,6 @@
   --main-blue: #0080ff;
   --title-blue: #327ac1;
 }
-
 @font-face {
     font-family: 'bpgnino';
     src: url('../fonts/bpg_nino_mtavruli_normal-webfont.eot');
@@ -14,9 +13,7 @@
     url('../fonts/bpg_nino_mtavruli_normal-webfont.svg#bpg_nino_mtavruliregular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
-
 body {
   font-family: 'bpgnino', arial, sans-serif;
   color: #444444;
@@ -24,10 +21,7 @@ body {
   background-color: #f5f5f5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
-
-
 h1,
 h2,
 h5,
@@ -105,17 +99,19 @@ a {
     margin: 0;
     padding: 0;
     height: 100%;
-    width: 50px;
+    width: 80px;
     background-color: #000;
     position: fixed;
     z-index: 1;
 }
 .menu_normal li {
-  height: 75px;
+  height: 100px;
 }
 .menu_normal li a {
     display: block;
     color: #fff;
+    width: 80px;
+    height: 80px;
 }
 
 .menu_normal li a.active {
@@ -148,13 +144,44 @@ a {
   font-weight: 800;
   overflow: hidden;
   white-space: nowrap;
-  left: 55px;
-  margin-top: -50px;
+  left: 85px;
+  margin-top: -65px;
   padding-top: 8px;
   -webkit-transition: width 0.3s ease-in-out;
   -moz-transition: width 0.3s ease-in-out;
   -o-transition: width 0.3s ease-in-out;
   transition: width 0.3s ease-in-out;
+}
+.ico {
+  /*margin-top: 20px;*/
+  width: 80px;
+  height: 60px;
+  display: inline-block;
+  /*margin-left: 5px;*/
+  /*font: normal normal normal 14px/1;*/
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+.med_consult_logo {
+  height: 80px;
+  background-image: url(../img/Med_Consult_logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(30deg);
+}
+.repeat {
+  background-image: url(../img/icons.svg);
+  background-position: 0 0;
+}
+.all_symptoms {
+  background-image: url(../img/icons.svg);
+  background-position: 320px 0;
+}
+.info {
+  background-image: url(../img/icons.svg);
+  background-position: 240px 0;
 }
 
 /*sub button border animation*/
@@ -287,7 +314,7 @@ input[type="radio"] {
 
 /*^^^^^^^^^^^Checker^^^^^^^^^^^*/
 .contact {
-  height: 50px;
+  height: 80px;
   padding-left: 51px;
 }
 .email {
@@ -362,8 +389,9 @@ input[type="radio"] {
 }
 #rotate {
   left: 30px;
-  background-image: url(../img/icons/rotate.svg);
-  background-size: contain;
+  background-image: url(../img/icons.svg);
+  /*background-size: contain;*/
+  background-position: 160px 0;
 }
 #zoom-out {
   display: none;
@@ -374,8 +402,8 @@ input[type="radio"] {
 }
 #skin {
   right: 30px;
-  background-image: url(../img/icons/skin.svg);
-  background-size: contain;
+  background-image: url(../img/icons.svg);
+  background-position: 80px 0;
 }
 
 #symptoms

@@ -27,51 +27,62 @@ $(document).ready(function(){
   a.addEventListener("load",function(){
       var svgDoc = a.contentDocument;
       svg = svgDoc.getElementById("figure");
+      var text = svgDoc.getElementById("tooltip");
       var svgi = svgDoc.getElementById("outer");
       var showThis, hideThis;
+      var txt;
 
       $(svg).click(function(e){
-
         var scale = 4;
         var name = e.target.dataset.name;
         $("#zoom-out").show(500);
 
         $(showThis).css("display","none");
         $(hideThis).css("display","block");
+        // $(text).css("font-size","30px");
 
         switch(name){
           case "head":
             position = [0,280];
+            txt = 10;
             break;
           case "neck":
             position = [0,220];
+            txt = 10;
             break;
           case "chest":
             position = [0,190];
+            txt = 10;
             break;
           case "back":
             position = [0,140];
+            txt = 10;
             scale = 3.5;
             break;
           case "abdomen":
             position = [0,100];
+            txt = 10;
             break;
           case "pelvis":
           case "buttock":
             position = [0,10];
+            txt = 10;
             scale = 3.7;
             break;
           case "hand":
             position = [100,80];
+            txt = 10;
             scale = 2.2;
             break;
           case "leg":
             position = [0,-150];
+            txt = 20;
             scale = 1.8;
             break;
           default:
             position = [0,0];
             scale = 1;
+            txt = 30;
             $("#zoom-out").hide();
         }
 
@@ -80,16 +91,19 @@ $(document).ready(function(){
         $(showThis).css("display","block");
         $(hideThis).css("display","none");
 
+        $(text).css("font-size", txt + "px");
         $(".svg-path").css("transform", "scale(" + scale + ") translate(" + position[0] + "px," + position[1] + "px)")
       });
 
       $("#zoom-out").click(function(){
         position = [0,0];
         scale = 1;
+        txt = 30;
         $(showThis).css("display","none");
         $(hideThis).css("display","block");
         $(this).hide(500);
         $(".svg-path").css("transform", "scale(" + scale + ") translate(" + position[0] + "px," + position[1] + "px)")
+        $(text).css("font-size", txt + "px");
 
       });
     }, false);
