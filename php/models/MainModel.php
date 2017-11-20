@@ -80,15 +80,17 @@ class MainModel {
             return $body_parts;
         }
         
-        function getSymptoms($id) {
-            $position = isset($_REQUEST['position']) ? $_REQUEST['position'] : 1;
- 
+        function getSymptoms($id,$age,$gender) {
             $db = $this->sql;
             
             $query = "select s.id, s.name  from t_symptoms s, t_symptoms_map m
                        where s.id = m.symptom_id
-                         and m.sub_body_part_id = :id";
-            $params = array(0 => array('name' => ':id', 'value' => $id, 'type' => PDO::PARAM_INT|PDO::PARAM_INPUT_OUTPUT, 'size' => -1));
+                         and m.sub_body_part_id = :id
+                         and m.gender = :gender
+                         and m.age_id = :age_id";
+            $params = array(0 => array('name' => ':id', 'value' => $id, 'type' => PDO::PARAM_INT|PDO::PARAM_INPUT_OUTPUT, 'size' => -1),
+                    1 => array('name' => ':gender', 'value' => $gender, 'type' => PDO::PARAM_INT|PDO::PARAM_INPUT_OUTPUT, 'size' => -1),
+                    2 => array('name' => ':age_id', 'value' => $age, 'type' => PDO::PARAM_INT|PDO::PARAM_INPUT_OUTPUT, 'size' => -1));
             
             return $db->execStatement($query, $params);      
         }

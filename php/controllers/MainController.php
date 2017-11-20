@@ -13,6 +13,7 @@ class MainController {
             $params = isset($_REQUEST['params']) ? $_REQUEST['params'] : '';
             $position = isset($_REQUEST['position']) ? $_REQUEST['position'] : 1;
             $gender = isset($_REQUEST['gender']) ? $_REQUEST['gender'] : 1;
+            $age = isset($_REQUEST['age']) ? $_REQUEST['age'] : 1;
             $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : -1;
             
             $response = array();
@@ -62,7 +63,15 @@ class MainController {
                         $this->error['error'] .= ' ID not passed';
                         return $this->error;
                     }
-                    $response = $model->getSymptoms($id);
+                    if($age < 0) {
+                        $this->error['error'] .= ' age_id not passed';
+                        return $this->error;
+                    }
+                    if($gender < 0) {
+                        $this->error['error'] .= ' gender not passed';
+                        return $this->error;
+                    }
+                    $response = $model->getSymptoms($id,5,$gender);
                     break;
                 case 'age_list':
                     $response = $model->getAgeList();
