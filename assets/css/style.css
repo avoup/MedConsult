@@ -57,13 +57,14 @@ a {
   -o-transition: all 0.4s ease-in-out;
 }
 
-/*^^^^^^^Nav*/
+/*^^^^^^^Navigation*/
 
 .sidenav {
-    height: 100%;
+    height: 750px;
     width: 100%;
+    margin-top: 80px;
     position: fixed;
-    z-index: 2;
+    z-index: 1;
     /*white-space: nowrap;*/
     top: 0;
     left: 0;
@@ -72,15 +73,24 @@ a {
     transition: 0.5s;
     text-align:center;
 }
+.age,
+.sex {
+  max-width: 40%;
+  height: 500px;
+  vertical-align: top;
+}
+.sex {
+
+}
 
 .sidenav form div{
-    margin-bottom: 50px;
-    padding: 8px 8px 8px 32px;
+    /*margin-bottom: 50px;
+    padding: 8px 8px 8px 32px;*/
     text-decoration: none;
     font-size: 35px;
     font-weight: 800;
     color: #fff;
-    display: block;
+    display: inline-block;
     transition: 0.3s;
 }
 .sidenav .closebtn {
@@ -102,13 +112,15 @@ a {
     width: 80px;
     background-color: #000;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
 }
 .menu_normal li {
-  height: 100px;
+  height: 80px;
+  margin-bottom: 18px;
 }
 .menu_normal li a {
     display: block;
+    padding-top: 10px;
     color: #fff;
     width: 80px;
     height: 80px;
@@ -126,8 +138,9 @@ a {
   width: 350px;
 }
 .menu_normal .nav-item i {
-  font-size: 30px;
-  padding: 10px;
+  font-size: 38px;
+  height: 80px;
+  padding: 15px 10px 10px 10px;
   color: #fff;
   transition: 0.3s;
 }
@@ -152,17 +165,7 @@ a {
   -o-transition: width 0.3s ease-in-out;
   transition: width 0.3s ease-in-out;
 }
-.ico {
-  /*margin-top: 20px;*/
-  width: 80px;
-  height: 60px;
-  display: inline-block;
-  /*margin-left: 5px;*/
-  /*font: normal normal normal 14px/1;*/
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-}
+
 .med_consult_logo {
   height: 80px;
   background-image: url(../img/Med_Consult_logo.png);
@@ -170,18 +173,6 @@ a {
   background-repeat: no-repeat;
   background-position: center;
   transform: rotate(30deg);
-}
-.repeat {
-  background-image: url(../img/icons.svg);
-  background-position: 0 0;
-}
-.all_symptoms {
-  background-image: url(../img/icons.svg);
-  background-position: 320px 0;
-}
-.info {
-  background-image: url(../img/icons.svg);
-  background-position: 240px 0;
 }
 
 /*sub button border animation*/
@@ -252,23 +243,92 @@ a {
   border-left-color: var(--main-blue);
   transition: height 0.25s ease-out, width 0.25s ease-out 0.25s;
 }
-/*000000000*/
+/*-----------form*/
 .form {
   position: relative;
-  top: 150px;
+  padding-bottom: 100px;
+  top: 50px;
+  left:50px;
   margin: auto;
 }
 #choose-age {
   font-size: 30px;
   height:60px;
 }
-input[type="radio"] {
+/*input[type="radio"] {
 	width: 25px;
   height: 25px;
   margin-right: 5px;
 }
 .radio-inline {
   margin: 15px;
+}*/
+.form .radio_div {
+  margin: 0 0 0.75em 0;
+  display: inline-block;
+}
+
+.form input[type="radio"] {
+  display: none;
+}
+
+.form input[type="radio"] + label span {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  color: white;
+  line-height: 30px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 3px solid #fff;
+}
+
+.form input[type="radio"] + label span p {
+  color: #fff;
+  font-size: 18px;
+  margin-top: 20px;
+}
+.sex input[type="radio"] + label span {
+  width: 200px;
+  height: 200px;
+}
+.sex input[type="radio"] + label span p {
+  color: #fff;
+  font-size: 25px;
+  margin-top: 50px;
+}
+.form input[type="radio"] + label span i {
+  color: #fff;
+  font-size: 80px;
+  margin-top: 20px;
+}
+
+.form input[type="radio"]:checked + label span {
+  border: 3px solid var(--main-blue);
+  border-radius: 10px;
+}
+
+.form input[type="radio"]:checked + label span p,
+.form input[type="radio"]:checked + label span i {
+  color: var(--main-blue);
+}
+
+.form input[type="radio"] + label span,
+.form input[type="radio"]:checked + label span {
+  -webkit-transition: border 0.4s linear;
+  -o-transition: border 0.4s linear;
+  -moz-transition: border 0.4s linear;
+  transition: border 0.4s linear, border-radius 0.4s linear;
+}
+
+.form input[type="radio"] + label span p,
+.form input[type="radio"]:checked + label span p,
+.form input[type="radio"]:checked + label span i  {
+  -webkit-transition: color 0.4s linear;
+  -o-transition: color 0.4s linear;
+  -moz-transition: color 0.4s linear;
+  transition: color 0.4s linear;
 }
 
 
@@ -300,17 +360,7 @@ input[type="radio"] {
   border: 1px solid orange;
 }
 
-.wide {
-  height:700px;
-}
-.notwide {
-  height: 53%;
-  margin-bottom: 5px;
-}
-.display {
-  display: flex;
-  padding: 0;
-}
+
 
 /*^^^^^^^^^^^Checker^^^^^^^^^^^*/
 .contact {
@@ -349,8 +399,9 @@ input[type="radio"] {
   transform: rotate(-90deg);
 }
 .appcontainer {
-  padding-left: 50px;
+  padding-left: 79px;
   width: 100%;
+  height: 800px;
   margin: 0;
 }
 .case-title {
@@ -367,6 +418,18 @@ input[type="radio"] {
   background-color: grey;
   border-style: inset;
 }
+.mini_panel {
+  height: 401px;
+  width: 100%;
+}
+.mini_panel .content-case {
+  height: 355px;
+}
+.display {
+  display: flex;
+  padding: 0;
+  height: 755px;
+}
 #body {
   overflow: hidden;
   max-width: calc(7/12 * 100%);
@@ -375,6 +438,7 @@ input[type="radio"] {
 .svg-path {
   position: relative;
   overflow: hidden;
+  /*margin: auto;*/
   background-color: #1f1f1f;
   background-repeat: no-repeat;
   background-size: contain;
@@ -387,23 +451,26 @@ input[type="radio"] {
   height: 80px;
   cursor: pointer;
 }
+.svg-btn i {
+  font-size: 60px;
+  color: #fff;
+  transition: 0.3s;
+}
 #rotate {
   left: 30px;
-  background-image: url(../img/icons.svg);
+  /*background-image: url(../img/icons.svg);*/
   /*background-size: contain;*/
-  background-position: 160px 0;
+  /*background-position: 160px 0;*/
 }
 #zoom-out {
   display: none;
   left: 30px;
   top: 550px;
-  background-image: url(../img/icons/zoom-out.svg);
-  background-size: contain;
 }
 #skin {
   right: 30px;
-  background-image: url(../img/icons.svg);
-  background-position: 80px 0;
+  /*background-image: url(../img/icons.svg);
+  background-position: 80px 0;*/
 }
 
 #symptoms

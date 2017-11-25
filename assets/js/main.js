@@ -22,36 +22,36 @@ $(document).ready(function(){
   // };
 
   // GET JSON
-      $.getJSON("assets/js/symptoms.json", function(result){
-
-          var html = "";
-
-          result.forEach(function(val) {
-
-             html += "<div class = 'symptom-button' id='" + val.id + "'>";
-
-             html += "<h4 class='text-center'>" + val.name + "</h4>";
-
-             html += "</div>";
-
-           });
-
-          $("#symptoms").html(html);
-
-
-      $('.symptom-button').click(function(){
-          var inThis = this;
-          var containersIds = ['symptoms','chosen-symptoms'];
-          var sourse = $(this).parent().prop("id");
-          var index = containersIds.indexOf(sourse)+1;
-              index %= 2;
-              var destination = containersIds[index];
-              $(inThis).slideUp(200, function(){
-                $(inThis).appendTo('#'+destination).slideDown(100);
-
-              });
-          });
-    });
+  //     $.getJSON("assets/js/symptoms.json", function(result){
+  //
+  //         var html = "";
+  //
+  //         result.forEach(function(val) {
+  //
+  //            html += "<div class = 'symptom-button' id='" + val.id + "'>";
+  //
+  //            html += "<h4 class='text-center'>" + val.name + "</h4>";
+  //
+  //            html += "</div>";
+  //
+  //          });
+  //
+  //         $("#symptoms").html(html);
+  //
+  //
+  //     $('.symptom-button').click(function(){
+  //         var inThis = this;
+  //         var containersIds = ['symptoms','chosen-symptoms'];
+  //         var sourse = $(this).parent().prop("id");
+  //         var index = containersIds.indexOf(sourse)+1;
+  //             index %= 2;
+  //             var destination = containersIds[index];
+  //             $(inThis).slideUp(200, function(){
+  //               $(inThis).appendTo('#'+destination).slideDown(100);
+  //
+  //             });
+  //         });
+  //   });
 
 
 });

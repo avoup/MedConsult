@@ -13,7 +13,8 @@
     <!-- <link rel="shortcut icon" href="icon.ico"> -->
     <!-- <link href='assets/css/fonts/font.css' rel='stylesheet' type='text/css'> -->
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+    <!-- <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css"> -->
+    <link rel="stylesheet" href="assets/fonts/mad-font/css/mad-font.css">
     <!-- myCSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/menu.css">
@@ -29,7 +30,7 @@
 
   <nav>
     <!-- button menu -->
-    <section class="menu menu--circle">
+    <!-- <section class="menu menu--circle">
       <input type="checkbox" id="menu__active"/>
       <label for="menu__active" class="menu__active">
         <div class="menu__toggle">
@@ -43,7 +44,6 @@
               <div class="placeholder">
                 <div class="upside">
                   <a href="#" class="button ico all_symptoms">
-                    <!-- <div class="ico info">a</div> -->
                   </a>
                 </div>
               </div>
@@ -52,7 +52,6 @@
               <div class="placeholder">
                 <div class="upside">
                   <a href="#" class="button open ico repeat">
-                    <!-- <div class="ico repeat"></div> -->
                   </a>
                 </div>
               </div>
@@ -62,7 +61,6 @@
               <div class="placeholder">
                 <div class="upside">
                   <a href="#" class="button ico info">
-                    <!-- <i class="ico repeat"></i> -->
                   </a>
                 </div>
               </div>
@@ -72,25 +70,31 @@
 
       </div>
     </label>
-  </section>
+  </section> -->
 
   <section class="menu_normal">
     <ul>
       <li class="nav-item"><a class="active" href="#main"><div class="ico med_consult_logo"></div></a></li>
       <li class="nav-item"><a href="#" class="open">
-        <div class="ico repeat"></div>
+        <!-- <div class="ico repeat"></div> -->
+        <i class="icon-retry"></i>
       </a>
         <span class="nav-item-text text-center">ახლიდან დაწყება</span>
       </li>
       <li class="nav-item"><a href="#allsymptoms">
-        <div class="ico all_symptoms"></div>
+        <i class="icon-newspaper"></i>
       </a>
         <span class="nav-item-text text-center">ყველა სიმპტომის ნახვა</span>
       </li>
       <li class="nav-item"><a href="#contact">
-        <div class="ico info"></div>
+        <i class="icon-info"></i>
       </a>
         <span class="nav-item-text text-center">კონტაქტი</span>
+      </li>
+      <li class="nav-item"><a href="#calculators">
+        <i class="icon-calc"></i>
+      </a>
+        <span class="nav-item-text text-center">BMI მთვლელი</span>
       </li>
   </ul>
 </section>
@@ -101,9 +105,50 @@
 
       <form class="form">
 
-        <div class="container">
-          <label for="choose-age">აირჩიეთ ასაკი:</label>
-          <select class="form-control" id="choose-age" name="age">
+        <div class="age">
+          <h3>აირჩიეთ ასაკი:</h3>
+          <div class="radio_div">
+            <input type="radio" id="radio01" name="radio" />
+            <label for="radio01"><span><p>0-2<br> წლის</p></span></label>
+          </div>
+          <div class="radio_div">
+           <input type="radio" id="radio02" name="radio" />
+            <label for="radio02"><span><p>3-6<br> წლის</p></span></label>
+          </div>
+          <div class="radio_div">
+            <input type="radio" id="radio03" name="radio" />
+            <label for="radio03"><span><p>7-12<br> წლის</p></span></label>
+          </div>
+          <div class="radio_div">
+           <input type="radio" id="radio04" name="radio" />
+            <label for="radio04"><span><p>13-17<br> წლის</p></span></label>
+          </div>
+          <div class="radio_div">
+            <input type="radio" id="radio05" name="radio" />
+            <label for="radio05"><span><p>18-24<br> წლის</p></span></label>
+          </div>
+          <div class="radio_div">
+           <input type="radio" id="radio06" name="radio" />
+            <label for="radio06"><span><p>25-34<br> წლის</p></span></label>
+          </div>
+          <div class="radio_div">
+            <input type="radio" id="radio07" name="radio" />
+            <label for="radio07"><span><p>35-44<br> წლის</p></span></label>
+          </div>
+          <div class="radio_div">
+           <input type="radio" id="radio08" name="radio" />
+            <label for="radio08"><span><p>45-54<br> წლის</p></span></label>
+          </div>
+          <div class="radio_div">
+            <input type="radio" id="radio09" name="radio" />
+            <label for="radio09"><span><p>55-64<br> წლის</p></span></label>
+          </div>
+          <div class="radio_div">
+           <input type="radio" id="radio10" name="radio" />
+            <label for="radio10"><span><p>65+ <br> წლის</p></span></label>
+          </div>
+
+          <!-- <select class="form-control" id="choose-age" name="age">
             <option value="0-2">(შემოწმება ბავშვისთვის) 0-2 წლის</option>
             <option value="3-6">(შემოწმება ბავშვისთვის) 3-6 წლის</option>
             <option value="7-12">(შემოწმება ბავშვისთვის) 7-12 წლის</option>
@@ -114,16 +159,19 @@
             <option value="45-54">45-54 წლის</option>
             <option value="55-64">55-64 წლის</option>
             <option value="65">65-ზე მეტი</option>
-          </select><br>
+          </select><br> -->
         </div>
 
-        <div>
-          <label class="radio-inline">
-            <input type="radio" name="gender" value="male" checked>მამრობითი
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="gender" value="female">მდედრობითი
-          </label>
+        <div class="sex">
+          <h3>აირჩიეთ სქესი</h3>
+          <div class="radio_div">
+            <input type="radio" id="radio_male" name="gender" value="male">
+            <label for="radio_male"><span><i class="icon-male"></i><p>მამრობითი</p></span></label>
+          </div>
+          <div class="radio_div">
+            <input type="radio" id="radio_female" name="gender" value="female">
+            <label for="radio_female"><span><i class="icon-female"></i><p>მდედრობითი</p></span></label>
+          </div>
         </div>
 
         <div>
@@ -144,32 +192,28 @@
   <div class="row appcontainer">
     <div class="col-sm-8">
       <div class="col-sm-12 case-title text-center"><h3>აირჩიეთ სიმპტომები</h3></div>
-      <div class="col-sm-12 text-center display">
-        <div class="col-sm-12 wide content-case" id="body">
-          <object data="assets/img/figures.svg" type="image/svg+xml" class="svg-path female" id="figure">
+      <div class="col-sm-12 display">
+        <div class="col-sm-12 content-case" id="body">
+          <object data="assets/img/figures.svg" type="image/svg+xml" width="400" height="700" class="svg-path" id="figure">
             თქვენს ბრაუზერს არ აქვს SVG ფუნქცია!
           </object>
-          <div class="svg-btn" id="rotate"></div>
-          <div class="svg-btn" id="zoom-out"></div>
-          <div class="svg-btn" id="skin"></div>
+          <div class="svg-btn" id="rotate"><i class="icon-rotate"></i></div>
+          <div class="svg-btn" id="zoom-out"><i class="icon-zoom-out"></i></div>
+          <div class="svg-btn" id="skin"><i class="icon-skin"></i></div>
         </div>
-        <div class="col-sm-5 wide content-case" id="symptoms"> symptoms go here </div>
+        <div class="col-sm-5 content-case" id="symptoms"> symptoms go here </div>
       </div>
     </div>
 
-    <div class="col-sm-3 wide inline">
-      <!-- <div class="col-sm-12 notwide bord content-case"> -->
-
-        <div class="col-sm-12 notwide content-case" id="chosen-symptoms">
-          <div class="case-title text-center"><h3>არჩეული სიმპტომები</h3></div>
-        </div>
-      <!-- </div> -->
-      <!-- <div class="col-sm-12 notwide bord content-case"> -->
-
-        <div class="col-sm-12 notwide content-case" id="diagnosis">
-          <div class="case-title text-center"><h3>სავარაუდო დიაგნოზი</h3></div>
-        </div>
-      <!-- </div> -->
+    <div class="col-sm-3 inline">
+      <div class="mini_panel">
+        <div class="case-title text-center"><h3>არჩეული სიმპტომები</h3></div>
+        <div class="col-sm-12 content-case" id="chosen-symptoms"></div>
+      </div>
+      <div class="mini_panel">
+        <div class="case-title text-center"><h3>სავარაუდო დიაგნოზი</h3></div>
+        <div class="col-sm-12 content-case" id="diagnosis"></div>
+      </div>
     </div>
   </div>
 

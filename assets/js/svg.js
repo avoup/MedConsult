@@ -28,8 +28,7 @@
           var x = (v[i].gender - 1)*800 + (v[i].position - 1)*400;
           var image = v[i].image;
           var sub = v[i].sub_parts;
-          // console.log(v[i].sub_parts);
-          // console.log(v[i].html_id)
+          
           out += "<path " + image;
           out += " onmousemove= \"ShowTooltip(evt,'" + v[i].name + "'," + x + ")\"";
           out += " onmouseout='HideTooltip()'";
@@ -68,8 +67,8 @@
 
   function ShowTooltip(evt, mouseovertext, x){
 
-  tooltip.setAttributeNS(null,"x",evt.clientX + x + 10);
-  tooltip.setAttributeNS(null,"y",evt.clientY);
+  tooltip.setAttributeNS(null,"x",evt.clientX + x - 50);
+  tooltip.setAttributeNS(null,"y",evt.clientY + 50);
   tooltip.firstChild.data = mouseovertext;
   tooltip.setAttributeNS(null,"visibility","visible");
 }

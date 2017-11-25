@@ -14,15 +14,17 @@ $(document).ready(function(){
        pos = "800";
        posit();
     } else if($('input[name=gender]:checked', 'form').val() == "male") {
-      sex = "male";
-      pos = "0";
-      posit();
+       sex = "male";
+       pos = "0";
+       posit();
     }
-     $(".svg-path").css("background-image", "url(assets/img/" + sex + "-front.jpg)")
-     $("#close").css("display","block");
-     document.getElementById("menu__active").checked = false;
-     document.getElementById("mySidenav").style.width = "0";
+       $(".svg-path").css("background-image", "url(assets/img/" + sex + "-front.jpg)")
+       $("#close").css("display","block");
+       document.getElementById("mySidenav").style.width = "0";
+     // document.getElementById("menu__active").checked = false;
   });
+
+
 
   a.addEventListener("load",function(){
       var svgDoc = a.contentDocument;
@@ -31,6 +33,73 @@ $(document).ready(function(){
       var svgi = svgDoc.getElementById("outer");
       var showThis, hideThis;
       var txt;
+
+
+      function symptomsRequest(url){
+        $.ajax ({
+          url: url,
+          type: "get",
+          datatype: "JSON",
+          beforeSend: function(){
+            console.log("waiting...")
+          },
+          success: function(response){
+            var result = $.parseJSON(response);
+            symptomsDraw(result);
+          },
+          error: function(error){
+            console.log("error!!!");
+          }
+        });
+      }
+
+      function symptomsDraw(data){
+        var html = "";
+
+        data.forEach(function(val) {
+
+           html += "<div class='symptom-button' id='" + val.id + "'>";
+
+           html += "<h4 class='text-center'>" + val.name + "</h4>";
+
+           html += "</div>";
+
+         });
+
+        $("#symptoms").html(html);
+
+
+        $('.symptom-button').click(function(){
+            var inThis = this;
+            var containersIds = ['symptoms','chosen-symptoms'];
+            var sourse = $(this).parent().prop("id");
+            var index = containersIds.indexOf(sourse)+1;
+                index %= 2;
+                var destination = containersIds[index];
+                $(inThis).slideUp(200, function(){
+                  $(inThis).appendTo('#'+destination).slideDown(100);
+
+                });
+            });
+      }
+
+      function getIDs(s){
+        var id = s.target.id;
+        var back_id = svgDoc.getElementById("id_for-" + id);
+
+        if(id == "figure"){
+            // position = [0,0];
+            // scale = 1;
+            // txt = 30;
+            console.log("should zoom out");
+        } else {
+          var sexNum;
+          if(sex == "female"){sexNum=1}else{sexNum=2}
+          var back_id_val = back_id.innerHTML;
+          var url = "php/loader.php?params=symptoms&id=" + back_id_val + "&gender=" + sexNum + "&age=5";
+          symptomsRequest(url);
+        }
+      }
 
       $(svg).click(function(e){
         var scale = 4;
@@ -84,6 +153,7 @@ $(document).ready(function(){
             scale = 1;
             txt = 30;
             $("#zoom-out").hide();
+            getIDs(e);
         }
 
         showThis = svgDoc.getElementById(sex[0] + "-" + view[0] + "-i-" + name);
