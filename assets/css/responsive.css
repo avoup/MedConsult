@@ -1,60 +1,14 @@
 
 @media (max-width: 575px)  {
-  .form {
-    top: 50px;
-  }
   #body {
     max-width: 100%;
   }
   #symptoms {
     display: none;
   }
-  #drag {
-    position: absolute;
-    background-color: var(--title-blue);
-    cursor: pointer;
-    top: 50px;
-    left: 0px;
-    width: 50px;
-    height: 120px;
-    background:
-     radial-gradient(circle at 10% -20%,
-      #1f1f1f 50px,
-      rgba(255,255,25,0) 0px),
-     radial-gradient(circle at 10% 120%,
-      #1f1f1f 50px,
-      rgba(255,255,25,0) 0px),
-
-     radial-gradient(circle at 40% 62%,
-      var(--title-blue) 20px,
-      rgba(255,255,25,0) 0px),
-     radial-gradient(circle at 40% 38%,
-      var(--title-blue) 20px,
-      rgba(255,255,25,0) 0px),
-     radial-gradient(circle at 30% 50%,
-      var(--title-blue) 20px,
-      rgba(255,255,25,0) 0px),
-
-     radial-gradient(circle at 215% 50%,
-      var(--title-blue) 100px,
-      rgba(255,255,25,0) 0px);
-  }
-  .notwide {
-    margin-bottom: 0;
-  }
-  nav ul {
-    width: 0;
-  }
-  .appcontainer {
-    padding-left: 0;
-  }
   .sidenav form div {
     padding: 0;
   }
-  .radio-inline {
-    margin: 0;
-  }
-
 }
 
 @media (min-width: 576px) and (max-width: 767px){
@@ -62,71 +16,43 @@
     .col-sm-8 {
     max-width: 100%;
   }
-  .notwide {
-    margin-bottom: 0;
-  }
-  nav ul {
-    width: 0;
-  }
-  .appcontainer {
-    padding-left: 0;
-  }
-  .form {
-    top: 50px;
-  }
   .sidenav form div {
     padding: 0;
-  }
-  .radio-inline {
-    margin: 0;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .inline {
-    display: inline-flex;
-  }
   .col-sm-3 {
     max-width: 100%;
   }
   .col-sm-8 {
   max-width: 100%;
   }
-  .inline.wide {
-    height: 300px;
-    max-width: 50%;
-  }
-  .notwide {
-    height: 100%;
-  }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-  .inline {
-    display: inline-flex;
-    }
   .col-sm-3 {
     max-width: 100%;
   }
   .col-sm-8 {
     max-width: 100%;
   }
-  .inline.wide {
-    height: 300px;
-    max-width: 50%;
-  }
-  .notwide {
-    height: 100%;
-  }
  }
 
 @media (max-width: 767px){
+  nav ul {
+    width: 0;
+  }
   .menu_normal {
     display: none;
   }
-  /*.sidenav {
-    white-space: wrap;
-  }*/
+  .appcontainer {
+    padding-left: 0;
+  }
+  .calculator_container {
+    padding-left: 0;
+    margin-left: -10px;
+  }
 }
 @media (min-width: 768px){
   .menu {

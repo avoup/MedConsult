@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+    <title>Symtom Checker</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=420; initial-scale=1.0; user-scalable=yes"/>
+    <meta name="description" content="სიმპტომების შემოწმება ონლაინში, ვებ კონსულტაცია">
+    <meta name="keywords" content="სიმპტომები, შემოწმება, ონლაინ, ვებ, კონსულტაცია">
+    <meta name="author" content="MadSpider">
+    <!-- <link rel="shortcut icon" href="icon.ico"> -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/mad-font/css/mad-font.css">
+    <!-- myCSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/menu.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+</head>
+<body>
+
+
+
+
+<header>
+
+  <nav>
+    <section class="menu_normal">
+      <ul>
+        <li class="nav-item"><a class="active" href="#main"><div class="ico med_consult_logo"></div></a></li>
+        <li class="nav-item"><a href="index.html" class="open">
+          <!-- <div class="ico repeat"></div> -->
+          <i class="icon-retry"></i>
+        </a>
+          <span class="nav-item-text text-center">ახლიდან დაწყება</span>
+        </li>
+        <li class="nav-item"><a href="#">
+          <i class="icon-newspaper"></i>
+        </a>
+          <span class="nav-item-text text-center">ყველა სიმპტომის ნახვა</span>
+        </li>
+        <li class="nav-item"><a href="#contact">
+          <i class="icon-info"></i>
+        </a>
+          <span class="nav-item-text text-center">კონტაქტი</span>
+        </li>
+        <li class="nav-item"><a href="#calc">
+          <i class="icon-calc"></i>
+        </a>
+          <span class="nav-item-text text-center">BMI მთვლელი</span>
+        </li>
+      </ul>
+    </section>
+  </nav>
+
+
+</header>
+
+
+
+<div class="container-fluid">
+  <!-- <div class="contact"><div class="email"><span>info@medconsult.ge</span><div></div></div></div> -->
+
+  <div class="calculator_container">
+    <div class="calc_title_container">
+      <div class="calc_title_label_container">
+        <input type="radio" class="c_radio" id="1" name="selector"><label for="1">BMI მთვლელი</label>
+        <input type="radio" class="c_radio" id="2" name="selector"><label for="2">BMI მთვლელი ბავშვებისთვის</label>
+        <input type="radio" class="c_radio" id="3" name="selector"><label for="3">სხეულის პროცენტილი ბავშვებისთვის</label>
+        <input type="radio" class="c_radio" id="4" name="selector"><label for="4">სხეულის პროცენტილი ჩვილებისთვის</label>
+        <input type="radio" class="c_radio" id="5" name="selector"><label for="5">დღიური კალორიების მთვლელი</label>
+        <input type="radio" class="c_radio" id="6" name="selector"><label for="6">ვარჯიშის კალორიების მთვლელი</label>
+        <input type="radio" class="c_radio" id="7" name="selector"><label for="7">იდეალური სხეულის წონის მთვლელი</label>
+        <input type="radio" class="c_radio" id="8" name="selector"><label for="8">სითხის კალორიების მთვლელი</label>
+      </div>
+      <div class="roller">
+      </div>
+    </div>
+    <div class="calc_container">
+      <form name="bmi" method="post">
+      <div class="calc_container_data">
+        <table cellspacing="0" cellpadding="2" border="0">
+          <tbody>
+            <tr>
+              <th colspan="2" class="top">სხეულის მასის ინდექსი</th>
+            </tr>
+            <tr>
+              <th colspan="2">შეიყვანეთ მონაცემები</th>
+            </tr>
+            <tr>
+              <td class="left">სქესი</td>
+              <td> <input type="radio" name="sex" checked>მამრობითი
+                <input type="radio" name="sex">მდედრობითი
+               </td>
+            </tr>
+            <tr>
+              <td>წონა</td>
+              <td><input type=text size=3 maxlength=4 value="" name="wt">
+                        <select name="wu">
+                          <option>კგ
+                          <option>ფტ </select> </td>
+            </tr>
+            <tr>
+              <td>სიმაღლე</td>
+              <td><input type=text size=3 maxlength=3 value="" name="ht">
+                        <select name="hu">
+                          <option>სმ
+                          <option>ინჩი
+                          <option>მეტრი </select></td>
+            </tr>
+            <tr>
+              <td colspan="2"><input type=button name=button value="Calculate"
+            onClick="bmiCalc(this.form)"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="calc_container_results">
+        <table>
+          <tbody>
+            <tr>
+              <th colspan="2">შედეგები </th>
+            </tr>
+            <tr>
+              <td> სხეულის ზედაპირის ფართობი </td>
+              <td><input type=text size=5 maxlength=5 value="" name="bsa" class = "output">
+            m<sup>2</sup></td>
+            </tr>
+            <tr>
+              <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> სხეულის მჭლე წონა</font></td>
+              <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+                        <input type=text size=5 maxlength=5 value="" name="leanKg" class = "output">
+                        კგ =
+                        <input type=text size=5 maxlength=5 value="" name="leanLbs" class = "output">
+                        ფტ </font></td>
+            </tr>
+            <tr>
+              <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> სხეულის იდეალური წონა</font></td>
+              <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+                        <input type=text size=5 maxlength=5 value="" name="idealKg" class="output">
+                        კგ =
+                        <input type=text size=5 maxlength=5 value="" name="idealLbs" class="output">
+                        ფტ </font></td>
+            </tr>
+            <tr>
+              <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> სხულის მასის ინდექსი</font></td>
+              <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+                        <input type=text size=5 maxlength=5 value="" name="bmi" class="output">
+                        კგ/მ<sup>2</sup> =
+                        <input type=text size=12 maxlength=12 value="" name="interp" class="output">
+                        </font></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="calc_container_interpret">
+        <table>
+          <tbody>
+            <tr>
+              <th colspan="2">შედეგების ინტერპრეტაცია
+              </th>
+            </tr>
+            <tr>
+              <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">BMI
+              &lt; 18.5</font></td>
+              <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">გამხდარი</font></td>
+            </tr>
+            <tr>
+              <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">BMI
+              18.5 to 24.9</font></td>
+              <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">ჯანმრთელი</font></td>
+            </tr>
+            <tr>
+              <td>BMI
+              25 to 29.9</td>
+              <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">ჭარბი წონა</font></td>
+            </tr>
+            <tr>
+              <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">BMI
+              30 or more </font></td>
+              <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">საქონელი</font></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </form>
+    </div>
+  </div>
+
+</div>
+
+<!-- Javascript -->
+
+<script type="text/javascript" src="assets/plugins/jquery-3.2.1.min.js"></script>
+
+<!-- <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> -->
+<script type="text/javascript" src="assets/js/main.js"></script>
+<script type="text/javascript" src="assets/js/calc.js"></script>
+<script language="JavaScript" type="text/javascript">recalc_onclick('');  </script>
+
+  </body>
+</html>

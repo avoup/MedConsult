@@ -79,9 +79,6 @@ a {
   height: 500px;
   vertical-align: top;
 }
-.sex {
-
-}
 
 .sidenav form div{
     /*margin-bottom: 50px;
@@ -255,14 +252,6 @@ a {
   font-size: 30px;
   height:60px;
 }
-/*input[type="radio"] {
-	width: 25px;
-  height: 25px;
-  margin-right: 5px;
-}
-.radio-inline {
-  margin: 15px;
-}*/
 .form .radio_div {
   margin: 0 0 0.75em 0;
   display: inline-block;
@@ -355,13 +344,6 @@ a {
      margin-right: 5px;
    }
 
-/*^^^^^^^temp*/
-.bord {
-  border: 1px solid orange;
-}
-
-
-
 /*^^^^^^^^^^^Checker^^^^^^^^^^^*/
 .contact {
   height: 80px;
@@ -438,7 +420,6 @@ a {
 .svg-path {
   position: relative;
   overflow: hidden;
-  /*margin: auto;*/
   background-color: #1f1f1f;
   background-repeat: no-repeat;
   background-size: contain;
@@ -507,4 +488,185 @@ a {
   -o-background-size: contain;
   background-size: contain;
   cursor: pointer;
+}
+
+/*calculators*/
+
+
+.calculator_container {
+  position: relative;
+    width: 100%;
+    height: 99vh;
+    padding-left: 68px;
+    overflow: scroll;
+}
+.calculator_container .calc_title_container {
+    display: inline-block;
+    width: 415px;
+    height: 100%;
+    overflow: hidden;
+    -webkit-animation-name: comein; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+    animation-name: comein;
+    animation-duration: 2s;
+}
+
+.calculator_container .calc_title_container .calc_title_label_container {
+   margin-top: 30%;
+}
+.calculator_container .calc_title_container label {
+    text-align: center;
+    font-size: 20px;
+    padding-top: 10px;
+    display: block;
+    width: 380px;
+    height: 30px;
+    margin: 20px auto 20px auto;
+    cursor: pointer;
+}
+.calculator_container .calc_title_container input[type=radio] {
+    display: none;
+}
+.calculator_container .calc_container {
+    display: inline-block;
+    width: 430px;
+    height: 90%;
+    vertical-align: top;
+    margin-top: 5%;
+    margin-left: 40px;
+}
+.calculator_container .calc_container_data,
+.calculator_container .calc_container_results,
+.calculator_container .calc_container_interpret {
+    /*position: absolute;*/
+    display: inline-block;
+    /*margin-left: 40px;*/
+    /*width: 421px;*/
+    height: 32.7%;
+    min-height: 200px;
+    overflow: hidden;
+    /* border: 2px solid rgba(35, 173, 255, 1); */
+    /* border-left: 0; */
+    box-shadow: 0px 0 6px 0px rgba(35, 173, 255, 1);
+    /* border-radius: 5px; */
+    background-color: lightgray;
+}
+.calculator_container .calc_container_data {
+  /*position: relative;*/
+  animation-name: fadeIn;
+  animation-duration: 3s;
+}
+.calculator_container .calc_container_results,
+.calculator_container .calc_container_interpret {
+    /*top: 31%;*/
+    animation-name: rollDown;
+    animation-duration: 3s;
+}
+.calculator_container .calc_container_interpret {
+    /*top: 62%;*/
+}
+.calculator_container .roller{
+    text-align: center;
+    border-right:0;
+    width:400px;
+    height:58px;
+    margin:auto;
+    margin-top: -488px;
+    position:relative;
+    box-shadow: inset 5px 0 6px 1px rgba(35, 173, 255, 1);
+    -moz-border-radius:5px 0 0 5px;
+    -webkit-border-radius:5px 0 0 5px;
+    transition: all 1s;
+}
+.calculator_container *,
+.calculator_container ::before,
+.calculator_container ::after {
+  box-sizing: initial;
+}
+.calculator_container .roller:after,
+.calculator_container .roller:before{
+    content:'';
+    width:402px;
+    height:900px;
+    background-color: rgba(0,0,0,0.1);
+    z-index: -2;
+    box-shadow:  5px 3px 6px -3px rgba(35, 173, 255, 1);
+    position:absolute;
+    right: -3px;
+    border-left:0;
+}
+.calculator_container .roller:after{
+    border-bottom:0;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    box-shadow: 5px -3px 6px -3px rgba(35, 173, 255, 1);
+    top:58px;
+}
+.calculator_container .roller:before{
+    border-top:0;
+    -moz-border-radius:0 0 5px 0;
+    -webkit-border-radius:0 0 5px 0;
+    top:-900px;
+}
+
+/*imported*/
+
+.calc_container {
+	text-align:center;
+}
+.calc_container table {
+	margin-right:auto;
+	margin-left:auto;
+	clear:both;
+	width:445px;
+	border-collapse:collapse;
+	empty-cells:show;
+	background-color:rgb(233,232,244);
+}
+.calc_container th.top {
+	padding:0 0px 0 0px;
+	empty-cells:show;
+	background-color:rgb(175,175,175);
+	color:rgb(255,255,255);
+	font-weight:bold;
+	font-size:120% !important;
+}
+.calc_container th {
+	height:3em;
+	border:solid 2px rgb(245,245,245);
+	background-color:rgb(225,225,225);
+	text-align:inherit;
+	color:rgb(80,80,80);
+	font-weight:bold;
+	font-size:100% !important;
+	font-size:90%;
+}
+.calc_container td {
+	height:2em;
+	border:solid 2px rgb(245,245,245);
+	background-color:#FFF;
+}
+
+
+/*Animation */
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes comein {
+    from {margin-left: -415px;}
+    to {margin-left: 0;}
+}
+
+/* Standard syntax */
+@keyframes comein {
+    from {margin-left: -415px;}
+    to {margin-left: 0;}
+}
+
+/*@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}*/
+@keyframes rollDown {
+  from {margin-top: -300px;}
+  to {margin-top: 0;}
 }

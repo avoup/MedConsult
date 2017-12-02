@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<style type="text/css">
+  input[type="button"] {
+    width: 80px;
+    height: 30px;
+  }
+
+
+</style>
+  <body>
+    <textarea id="input_data" rows="4" cols="50"></textarea>
+    <br/>
+    <input id="sub" type="button" value="submit">
+
+  </body>
+  <script type="text/javascript" src="assets/plugins/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript">
+  $("#sub").click(function(){
+    var raw_data = $("#input_data").val();
+    var arr_data = raw_data.split(",");
+    var obj = new Object();
+    obj.symptoms = arr_data;
+    var json_data = JSON.stringify(obj);
+
+    $.ajax ({
+      url: url,
+      type: "post",
+      datatype: "JSON",
+      data: json_data,
+      beforeSend: function(){
+        console.log("sending...")
+      },
+      success: function(response){
+        var result = $.parseJSON(response);
+        console.log("result");
+      },
+      error: function(error){
+        console.log("error!!!");
+      }
+    });
+  })
+
+
+
+  </script>
+</html>

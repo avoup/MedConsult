@@ -8,6 +8,13 @@ $(document).ready(function(){
   });
 
 
+  $(".c_radio").click(function(){
+
+    var id = parseInt($(this).attr("id"));
+    var mt = 548 - (60*id);
+    $(".roller").css("margin-top", "-" + mt + "px");
+  })
+
   // TOOLTIP
 
   // var tooltipss = document.querySelectorAll('.tooltips span');
