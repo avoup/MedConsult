@@ -95,6 +95,44 @@ class MainModel {
             return $db->execStatement($query, $params);      
         }
         
+        function getQuestions($symptom_id) {
+            $db = $this->sql;
+            
+            $query = "select q.id, q.name, q.alias
+                        from t_questions q
+                       where q.symptom_id = :symptom_id";
+            $params = array(0 => array('name' => ':symptom_id', 'value' => $symptom_id, 'type' => PDO::PARAM_INT|PDO::PARAM_INPUT_OUTPUT, 'size' => -1));
+            $questions = $db->execStatement($query,$params);
+            
+            $query = "select s.id, s.name, s.alias
+                        from t_answers s
+                       where s.question_id = :question_id";
+            
+            $i = 0;
+            foreach($questions as $value) {
+                $params = array(0 => array('name' => ':question_id', 'value' => $value['id'], 'type' => PDO::PARAM_INT|PDO::PARAM_INPUT_OUTPUT, 'size' => -1));
+                $questions[$i]['answers'] = $db->execStatement($query,$params);
+                $i++;
+            }
+            
+            return $questions;
+        }
+        
+        function getConditions($symptom_id,$answer_id) {
+            $db = $this->sql;
+            
+            $query = "select c.name, c.id, max(m.level) level
+                        from t_conditions_map m,
+                             t_conditions c
+                       where m.condition_id = c.id
+                         and m.symptom_id = :symptom_id
+                         and m.answer_id in (".$answer_id.")
+                       group by c.name, c.id";
+            $params = array(0 => array('name' => ':symptom_id', 'value' => $symptom_id, 'type' => PDO::PARAM_INT|PDO::PARAM_INPUT_OUTPUT, 'size' => -1));
+            
+            return $db->execStatement($query, $params);      
+        }
+        
 }
 
 

@@ -71,10 +71,25 @@ class MainController {
                         $this->error['error'] .= ' gender not passed';
                         return $this->error;
                     }
-                    $response = $model->getSymptoms($id,5,$gender);
+                    $response = $model->getSymptoms($id,$age,$gender);
                     break;
                 case 'age_list':
                     $response = $model->getAgeList();
+                    break;
+                case 'questions':
+                    if($id < 0) {
+                        $this->error['error'] .= ' ID not passed';
+                        return $this->error;
+                    }
+                    $response = $model->getQuestions($id);
+                    break;
+                case 'conditions':
+                    $answer_id = isset($_REQUEST['answer_id']) ? $_REQUEST['answer_id'] : 0;
+                    if($id < 0) {
+                        $this->error['error'] .= ' ID not passed';
+                        return $this->error;
+                    }
+                    $response = $model->getConditions($id,$answer_id);
                     break;
                 default:
                     $response = $model->getStructure();
