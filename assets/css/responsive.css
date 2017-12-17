@@ -1,5 +1,5 @@
 
-@media (max-width: 575px)  {
+@media (max-width: 767px)  {
   #body {
     max-width: 100%;
   }
@@ -10,6 +10,7 @@
     padding: 0;
   }
 }
+
 
 @media (min-width: 576px) and (max-width: 767px){
     .col-sm-3,
